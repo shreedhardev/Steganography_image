@@ -1,0 +1,52 @@
+Certainly! Let's break down the code step by step:
+
+1. Import the `lsb` module from the `stegano` library:
+
+```python
+from stegano import lsb
+```
+
+This line imports the module necessary for performing least significant bit (LSB) steganography operations.
+
+2. Define variables for the file paths:
+
+```python
+img = "path/to/your/image.png"
+new_img = "path/to/save/hidden/image.png"
+```
+
+These variables hold the paths to the original image (`img`) and the path where the new image with the hidden message will be saved (`new_img`).
+
+3. Define the message to be hidden:
+
+```python
+msg = "Type your message here"
+```
+
+This variable contains the message that you want to hide within the image. Replace `"Type your message here"` with the actual message you want to hide.
+
+4. Hide the message within the image:
+
+```python
+lsb.hide(img, message=msg).save(new_img)
+```
+
+The `lsb.hide()` function is used to hide the message (`msg`) within the image specified by `img`. The resulting image with the hidden message is then saved to the path specified by `new_img`.
+
+5. Reveal the hidden message from the image:
+
+```python
+revealed_message = lsb.reveal(new_img)
+```
+
+The `lsb.reveal()` function is used to extract the hidden message from the image saved at `new_img`. The revealed message is stored in the variable `revealed_message`.
+
+6. Print the hidden message:
+
+```python
+print("Hidden message:", revealed_message)
+```
+
+Finally, the hidden message is printed to the console.
+
+In summary, this code allows you to hide a message within an image using LSB steganography and then retrieve and display the hidden message.
